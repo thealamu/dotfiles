@@ -1,0 +1,11 @@
+[user]
+	name = Faithfulness Alamu
+	email = vaguemail369@gmail.com
+[alias]
+	s = status
+	unstage = restore --staged
+	graph = log --oneline --graph --all
+[core]
+	editor = vim
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret

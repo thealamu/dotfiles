@@ -1,6 +1,7 @@
 "colorscheme atom-dark-256
 
 set autoindent
+set ignorecase
 set backspace=2
 set balloondelay=250
 set incsearch

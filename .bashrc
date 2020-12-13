@@ -149,33 +149,8 @@ export PATH="$PATH:/home/thealamu/.yarn/bin"
 mkdir -p /tmp/session/bin
 export PATH="$PATH:/tmp/session/bin"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/home/thealamu/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/home/thealamu/miniconda3/etc/profile.d/conda.sh" ]; then
-#        . "/home/thealamu/miniconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/home/thealamu/miniconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-# <<< conda initialize <<<
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 complete -C /usr/bin/terraform terraform
-
-
-# powerline
-#powerline-daemon -q
-##POWERLINE_BASH_CONTINUATION=1
-##POWERLINE_BASH_SELECT=1
-##. /home/thealamu/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
-#
-

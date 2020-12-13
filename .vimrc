@@ -1,4 +1,5 @@
 "colorscheme atom-dark-256
+let mapleader = ","
 
 set autoindent
 set ignorecase

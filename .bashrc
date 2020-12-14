@@ -118,7 +118,7 @@ fi
 
 
 # Run my scripts
-source /home/thealamu/.scripts/*
+for file in $(ls /home/thealamu/.scripts); do source "/home/thealamu/.scripts/$file"; done;
 
 # Use 'skeswa/prompt' which is symlinked to '~/.prompt'.
 #. ~/.prompt/prompt.bash

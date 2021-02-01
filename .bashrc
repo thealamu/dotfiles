@@ -153,4 +153,6 @@ export PATH="$PATH:/tmp/session/bin"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-complete -C /usr/bin/terraform terraform
+#complete -C /usr/bin/terraform terraform
+
+set -o noclobber

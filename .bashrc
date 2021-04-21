@@ -15,9 +15,12 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# allow searching shell history forward with ctrl+s
+stty -ixon
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -84,14 +87,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -117,14 +112,10 @@ if ! shopt -oq posix; then
 fi
 
 
-# Run my scripts
-for file in $(ls /home/thealamu/.scripts); do source "/home/thealamu/.scripts/$file"; done;
-
-# Use 'skeswa/prompt' which is symlinked to '~/.prompt'.
-#. ~/.prompt/prompt.bash
-
-# Add git completion to the prompt (comes from 'skeswa/prompt').
-#. ~/.prompt/git-completion.bash
+# gh completion
+. ~/.scripts/gh-completion.sh
+# git completion
+. ~/.scripts/git-prompt.sh
 
 # Setup golang
 export GOPATH="/home/thealamu/go"
@@ -132,15 +123,6 @@ export GOBIN="$GOPATH/bin"
 export GOROOT="/usr/local/go"
 
 export PATH="$PATH:$GOBIN:$GOROOT/bin"
-
-# Bash Prompt
-export PS1='\[\e[33m\]\W\[\e[0;90m\]$(__git_ps1 "(%s)\[\e[m\]")\[\e[m\]\[\e[37m\]➜\[\e[m\] '
-
-# Skip tls verification for vault
-export VAULT_SKIP_VERIFY=true
-# Autocomplete for vault
-complete -C /usr/local/bin/vault vault
-alias gocov='go test -coverprofile=cover.out && go tool cover -html=cover.out'
 
 # Yarn bin
 export PATH="$PATH:/home/thealamu/.yarn/bin"
@@ -155,4 +137,44 @@ export PATH="$PATH:/tmp/session/bin"
 
 #complete -C /usr/bin/terraform terraform
 
+# prevent file overwrite mistake
 set -o noclobber
+
+# VSCode needs this to connect to X display
+export DISPLAY=:0.0
+
+eval "$(thefuck --alias)"
+
+# oh-my-bash
+export OSH=/home/thealamu/.oh-my-bash
+
+completions=(
+  git
+  ssh
+  golang
+)
+
+# Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
+# Custom aliases may be added to ~/.oh-my-bash/custom/aliases/
+# Example format: aliases=(vagrant composer git-avh)
+# Add wisely, as too many aliases slow down shell startup.
+aliases=(
+  general
+)
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-bash/plugins/*)
+# Custom plugins may be added to ~/.oh-my-bash/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+  bashmarks
+)
+
+source $OSH/oh-my-bash.sh
+
+# Bash Prompt
+export PS1='\[\e[33m\]\W\[\e[0;90m\]$(__git_ps1 "(%s)\[\e[m\]")\[\e[m\]\[\e[37m\]➜\[\e[m\] '
+#export PS1="\[\e[31m\]\W\[\e[m\]\\$ "
+
+source ~/.config/up/up.sh

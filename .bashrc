@@ -178,3 +178,7 @@ export PS1='\[\e[33m\]\W\[\e[0;90m\]$(__git_ps1 "(%s)\[\e[m\]")\[\e[m\]\[\e[37m\
 #export PS1="\[\e[31m\]\W\[\e[m\]\\$ "
 
 source ~/.config/up/up.sh
+
+# fzf
+[ -f ~/.fzf/fzf.bash ] && source ~/.fzf/fzf.bash
+export FZF_DEFAULT_OPTS='--border'

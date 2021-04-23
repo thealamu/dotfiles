@@ -179,3 +179,5 @@ export PS1='\[\e[33m\]\W\[\e[0;90m\]$(__git_ps1 "(%s)\[\e[m\]")\[\e[m\]\[\e[37m\
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+eval "$(starship init bash)"

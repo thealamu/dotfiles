@@ -1,0 +1,41 @@
+format = """
+$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$terraform\
+$vagrant\
+$conda\
+$env_var\
+$custom\
+$cmd_duration\
+$jobs\
+$battery\
+$status\
+$shell\
+$character
+"""
+
+add_newline = false
+
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[✗](bold red)"
+
+[git_branch]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[package]
+symbol = " "
+

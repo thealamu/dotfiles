@@ -1,0 +1,8 @@
+set ignorecase
+set incsearch
+set nocompatible
+set number
+set relativenumber
+set visualbell
+set noerrorbells
+

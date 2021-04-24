@@ -2,6 +2,16 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+#------------------------------------------------------------------------------------------------------------------
+
+# Uncomment to load in nvm
+##export NVM_DIR="$HOME/.nvm"
+##[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+##[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Uncomment to load terraform autocomplete
+#complete -C /usr/bin/terraform terraform
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -108,24 +118,19 @@ fi
 . ~/.scripts/git-prompt.sh
 
 # Setup golang
-export GOPATH="/home/thealamu/go"
+export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export GOROOT="/usr/local/go"
 
 export PATH="$PATH:$GOBIN:$GOROOT/bin"
 
 # Yarn bin
-export PATH="$PATH:/home/thealamu/.yarn/bin"
+export PATH="$PATH:$HOME/.yarn/bin"
 
 # tmp bin
 mkdir -p /tmp/session/bin
 export PATH="$PATH:/tmp/session/bin"
 
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#complete -C /usr/bin/terraform terraform
 
 # prevent file overwrite mistake
 set -o noclobber
@@ -136,7 +141,7 @@ export DISPLAY=:0.0
 eval "$(thefuck --alias)"
 
 # oh-my-bash
-export OSH=/home/thealamu/.oh-my-bash
+export OSH="$HOME/.oh-my-bash"
 
 completions=(
   git

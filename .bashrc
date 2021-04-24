@@ -124,7 +124,7 @@ source ~/.config/up/up.sh
 [ -f ~/.fzf/fzf.bash ] && source ~/.fzf/fzf.bash
 export FZF_DEFAULT_OPTS='--border'
 
-# Bash Prompt
+# Fallback bash prompt, starship is default (see below)
 export PS1='\[\e[33m\]\W\[\e[0;90m\]$(__git_ps1 "(%s)\[\e[m\]")\[\e[m\]\[\e[37m\]➜\[\e[m\] '
 
 # Alias definitions.

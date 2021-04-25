@@ -2,4 +2,4 @@
 
 ⚙ All the configs ⚙
 
-![Screencast video](https://github.com/thealamu/dotfiles/blob/main/screencast/vid1.mp4)
+https://user-images.githubusercontent.com/42256651/116009301-b0c01d00-a610-11eb-8925-f8a169ab5cc2.mp4

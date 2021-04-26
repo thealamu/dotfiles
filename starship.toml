@@ -4,6 +4,7 @@ $hostname\
 $shlvl\
 $kubernetes\
 $directory\
+$custom\
 $git_branch\
 $git_commit\
 $git_state\
@@ -15,7 +16,6 @@ $terraform\
 $vagrant\
 $conda\
 $env_var\
-$custom\
 $cmd_duration\
 $jobs\
 $battery\
@@ -39,3 +39,9 @@ read_only = " "
 [package]
 symbol = " "
 
+[custom.virtual_env]
+command = "basename $VIRTUAL_ENV"
+symbol = " "
+style = "white dimmed"
+format = "[\\($symbol($output)\\)]($style) "
+when = """! test -z $VIRTUAL_ENV"""

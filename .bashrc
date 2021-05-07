@@ -68,6 +68,8 @@ fi
 . ~/.scripts/gh-completion.sh
 # git completion
 . ~/.scripts/git-prompt.sh
+# z command
+. ~/.scripts/z.sh
 
 # Setup golang
 export GOPATH="$HOME/go"

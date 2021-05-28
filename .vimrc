@@ -1,3 +1,8 @@
+" Thu May 27 09:13:16 PM WAT 2021
+" A lot of features will be disabled to ensure speedy startup of vim.
+" Seriously, it has ridiculously become slow on this machine.
+"
+"
 "colorscheme atom-dark-256
 let mapleader = ","
 
@@ -11,7 +16,7 @@ set nocompatible
 set noexpandtab
 set nowrap
 set number
-set path+=**
+"set path+=**	// don't search files down in path 😢
 set relativenumber
 set shiftwidth=4
 set signcolumn=number
@@ -58,19 +63,19 @@ iabbrev reterr if err != nil {<CR>return err<CR><BS>}
 
 " Plugins...
 "
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
 
 " List plugins here
-Plug 'neoclide/coc.nvim'
-Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'voldikss/vim-floaterm'
+"Plug 'neoclide/coc.nvim'
+"Plug 'sheerun/vim-polyglot'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
+"Plug 'voldikss/vim-floaterm'
 "Plug 'joshdick/onedark.vim'
 "Allow autoclose paired characters like [,] or (,),
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 "Highlights the matching HTML tag when the cursor is positioned on a tag.
-Plug 'Valloric/MatchTagAlways'
+"Plug 'Valloric/MatchTagAlways'
 "Valloric/MatchTagAlways"
 nnoremap <leader>% :MtaJumpToOtherTag<cr>
 let g:mta_filetypes = {
@@ -81,9 +86,8 @@ let g:mta_filetypes = {
             \ 'typescript.tsx' : 1,
             \ 'typescript' : 1
             \}
-
 " Initialize plugin system
-call plug#end()
+"call plug#end()
 
 " Floating terminal styles and mappings
 let g:floaterm_height=0.4

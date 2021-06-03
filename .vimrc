@@ -144,7 +144,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Format on save
-autocmd BufWritePre * call CocAction('format')
+" autocmd BufWritePre * call CocAction('format')
 " :Format command also formats
 command! -nargs=0 Format :call CocAction('format')
 

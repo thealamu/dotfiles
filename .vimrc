@@ -11,8 +11,11 @@ set number
 set relativenumber
 set mouse=a
 set ttymouse=sgr
-
-set background=dark
+set balloondelay=250
+set signcolumn=number
+set updatetime=500
 
 filetype plugin indent on
 
+" Interface
+set background=dark

@@ -1,3 +1,5 @@
+alias cat='bat'
+
 # clipboard
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'

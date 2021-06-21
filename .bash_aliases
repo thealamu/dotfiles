@@ -1,4 +1,4 @@
-alias cat='bat'
+alias cat='bat -n' 
 
 # clipboard
 alias pbcopy='xsel --clipboard --input'

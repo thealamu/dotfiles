@@ -1,3 +1,5 @@
+alias mp='multipass'
+
 alias cat='bat -n' 
 
 # clipboard

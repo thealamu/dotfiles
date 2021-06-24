@@ -25,6 +25,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias pip=pip3
 alias python=python3
 
-alias gocov='go test -coverprofile=cover.out && go tool cover -html=cover.out'
+alias gocov='go test -coverprofile=cover.out ./... && go tool cover -html=cover.out'
 
 alias qfind='find . -name'

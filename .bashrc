@@ -85,6 +85,9 @@ export PATH="$PATH:$HOME/.yarn/bin"
 mkdir -p /tmp/session/bin
 export PATH="$PATH:/tmp/session/bin"
 
+# local bin
+export PATH="$PATH:$HOME/.local/bin"
+
 # prevent file overwrite mistake
 set -o noclobber
 
